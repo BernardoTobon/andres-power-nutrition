@@ -3,13 +3,13 @@ export const MenuIcon = (
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
-    stroke-width="1.5"
+    strokeWidth="1.5"
     stroke="currentColor"
     className="w-6 h-6 text-dark-green cursor-pointer"
   >
     <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
     />
   </svg>
@@ -156,14 +156,14 @@ export const TrArrowIcon = (
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
-    strokeWidth={1.5}
+    strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="w-6 h-6 "
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+      d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
     />
   </svg>
 );
