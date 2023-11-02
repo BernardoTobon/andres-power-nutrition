@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { BackArrowIcon, DatesIcon, HashtagsIcon, HomeIcon, MenuIcon, RateUsIcon, RecipesIcon, UserHistoryIcon, UsersIcon } from "@/icons";
+import {
+  BackArrowIcon,
+  DatesIcon,
+  HashtagsIcon,
+  HomeIcon,
+  MenuIcon,
+  RateUsIcon,
+  RecipesIcon,
+  UserHistoryIcon,
+  UsersIcon,
+} from "@/icons";
+import { useRouter } from "next/router";
 
 const Navdrawer = ({ children }) => {
   const [isOpen, SetIsOpen] = useState(false);
-  return (
+  const router = useRouter();
+  useEffect(() => {
+    SetIsOpen(false);
+  },[router.pathname])
+  const isLopginPage = router.pathname === ("/login/login");
+  if(isLopginPage) {
+    return children;
+  }
+  
+  return  (
     <div className="flex">
       <div className="absolute z-20" onClick={() => SetIsOpen(true)}>
         {MenuIcon}
@@ -24,9 +44,9 @@ const Navdrawer = ({ children }) => {
             overflow-auto transition-all ease-in-out duration-500`}
           >
             <div className="px-4 pb-4">
-                <div className="grid grid-rows-4 gap-4">
+              <div className="grid grid-rows-4 gap-4">
                 <div>
-                  <Link className="flex items-center gap-7" href={"/home"}>
+                  <Link className="flex items-center gap-7" href={"/user/lobby"}>
                     {HomeIcon}
                     Inicio
                   </Link>
@@ -67,7 +87,7 @@ const Navdrawer = ({ children }) => {
                     Calificanos
                   </Link>
                 </div>
-                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -76,7 +96,7 @@ const Navdrawer = ({ children }) => {
         <div className="">{children}</div>
       </div>
     </div>
-  );
+  ) ; 
 };
 
 export default Navdrawer;
